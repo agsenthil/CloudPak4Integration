@@ -1,0 +1,32 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  namespace: mqpot-lab1
+  name: mq-qmgr-naccts01-si-nosec
+spec:
+  license:
+    accept: true
+    license: L-RJON-BXUPZ2
+    use: NonProduction
+  web:
+    enabled: false
+  version: 9.2.3.0-r1
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  queueManager:
+    name: NACCTS01
+    mqsc:
+      - configMap:
+          items:
+            - mqsc
+          name: mq-mqsc-naccts01-nosec
+    availability:
+      type: SingleInstance
+    storage:
+      queueManager:
+        type: ephemeral

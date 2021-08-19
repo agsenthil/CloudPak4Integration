@@ -1,0 +1,28 @@
+{
+  "channel":
+  [
+    {
+      "general":
+      {
+        "description": "MQ channel details"
+      },
+      "name": "NACCTS.SVRCONN",
+      "clientConnection":
+      {
+        "connection":
+        [
+          {
+            "host": "mq-qmgr-naccts01-nha-nosec-ibm-mq-qm-cp4na.ibmcloud-roks-0860h-6ccd7f378ae819553d37d5f2ee142bd6-0000.ams03.containers.appdomain.cloud",
+            "port": 443
+          }
+        ],
+        "queueManager": "NACCTS01"
+      },
+      "transmissionSecurity":
+      {
+        "cipherSpecification": "TLS_RSA_WITH_AES_256_CBC_SHA256"
+      },
+          "type": "clientConnection"
+    }
+  ]
+}
